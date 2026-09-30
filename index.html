@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bé Vui Đánh Vần</title>
+  <meta name="description" content="Ứng dụng học bảng chữ cái và tập đánh vần tiếng Việt cho bé chuẩn bị vào lớp 1.">
+  <meta name="theme-color" content="#ffb84d">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦉</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand" aria-label="Về trang chủ">
+      <span class="brand-logo" id="brandLogo"></span>
+      <span class="brand-name">Bé Vui <b>Đánh Vần</b></span>
+    </a>
+    <div class="top-actions">
+      <a href="#/goc-be-ngoan" class="star-badge" id="starBadge" aria-label="Số sao của bé">
+        <span class="star-ico">⭐</span><span id="starCount">0</span>
+      </a>
+      <button class="icon-btn" id="btnVoice" aria-label="Cài đặt giọng đọc" title="Giọng đọc">⚙️</button>
+      <button class="icon-btn" id="btnMusic" aria-label="Bật/tắt nhạc nền" title="Nhạc nền">🎵</button>
+      <button class="icon-btn" id="btnSfx" aria-label="Bật/tắt âm thanh" title="Âm thanh">🔊</button>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" aria-label="Các mục học">
+    <a href="#/" data-route="home"><span>🏠</span>Trang chủ</a>
+    <a href="#/chu-cai" data-route="alphabet"><span>🔤</span>Chữ cái</a>
+    <a href="#/dau-thanh" data-route="tones"><span>🎶</span>Dấu thanh</a>
+    <a href="#/danh-van" data-route="spelling"><span>🧩</span>Đánh vần</a>
+    <a href="#/tim-chu" data-route="find"><span>🔍</span>Tìm chữ</a>
+    <a href="#/ghep-tu" data-route="drag"><span>✋</span>Ghép từ</a>
+    <a href="#/goc-be-ngoan" data-route="stickers"><span>🏆</span>Góc Bé Ngoan</a>
+  </nav>
+
+  <div class="voice-warn" id="voiceWarn" hidden>
+    <span>🔈 Máy của bé chưa có <b>giọng đọc Tiếng Việt</b>. <span id="voiceWarnText">Lời đọc có thể chưa chuẩn.</span></span>
+    <details>
+      <summary>Cách cài đặt</summary>
+      <ul>
+        <li><b>macOS / iPhone / iPad:</b> Cài đặt → Trợ năng → Nội dung được đọc → Giọng nói → thêm “Tiếng Việt (Linh)”.</li>
+        <li><b>Windows:</b> Settings → Time &amp; Language → Language → thêm “Tiếng Việt” (có Speech).</li>
+        <li><b>Android:</b> Cài đặt → Chuyển văn bản thành giọng nói → Google → tải dữ liệu Tiếng Việt.</li>
+        <li>Hoặc dùng trình duyệt <b>Microsoft Edge</b> (có sẵn giọng Tiếng Việt trực tuyến).</li>
+      </ul>
+    </details>
+    <button class="icon-btn small" id="voiceWarnClose" aria-label="Đóng">✕</button>
+  </div>
+
+  <main id="view" class="view" tabindex="-1"></main>
+
+  <footer class="foot">Làm với 💛 cho các bé chuẩn bị vào lớp 1</footer>
+
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" aria-live="polite"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/audio-clips.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/rewards.js"></script>
+  <script src="js/screens/home.js"></script>
+  <script src="js/screens/alphabet.js"></script>
+  <script src="js/screens/tones.js"></script>
+  <script src="js/screens/spelling.js"></script>
+  <script src="js/screens/find.js"></script>
+  <script src="js/screens/drag.js"></script>
+  <script src="js/screens/stickers.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
