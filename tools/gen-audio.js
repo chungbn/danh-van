@@ -26,7 +26,7 @@ vm.createContext(ctx);
 for (const f of ['js/utils.js', 'js/data.js']) {
   vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8').replace(/^const (\w+)/gm, 'var $1'), ctx);
 }
-const { LETTERS, ONSETS, RHYME_GROUPS, TONES, WORDS, TONE_BASES, PRAISE, TRY_AGAIN, STICKERS, PHRASES, VN } = ctx;
+const { LETTERS, ONSETS, RHYME_GROUPS, VAN_LESSONS, TONES, WORDS, TONE_BASES, PRAISE, TRY_AGAIN, STICKERS, PHRASES, VN } = ctx;
 
 const texts = new Set();
 const add = t => { if (t != null && String(t).trim()) texts.add(String(t).normalize('NFC').trim()); };
@@ -34,6 +34,10 @@ const add = t => { if (t != null && String(t).trim()) texts.add(String(t).normal
 LETTERS.forEach(l => { add(l.say); add(l.word); });
 ONSETS.forEach(o => add(o.say));
 RHYME_GROUPS.forEach(g => g.items.forEach(r => add(VN.rhymeSay(r))));
+VAN_LESSONS.forEach(l => Object.entries(l.ex).forEach(([r, ws]) => {
+  add(VN.rhymeSay(r));
+  ws.forEach(w => { const { o, t } = VN.split(w, r); add(w); VN.spellParts(o, r, t).forEach(p => add(p.text)); });
+}));
 TONES.forEach(t => { add(t.say); add(t.short); add(t.word); });
 WORDS.forEach(w => { add(w.w); VN.spellParts(w.o, w.r, w.t).forEach(p => add(p.text)); });
 TONE_BASES.forEach(([o, r]) => TONES.forEach(t => add(VN.compose(o, r, t.id))));

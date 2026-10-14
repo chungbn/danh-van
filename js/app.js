@@ -2,7 +2,7 @@
 
 const App = (() => {
   const ROUTES = {
-    '': 'home', 'chu-cai': 'alphabet', 'dau-thanh': 'tones', 'danh-van': 'spelling',
+    '': 'home', 'chu-cai': 'alphabet', 'dau-thanh': 'tones', 'danh-van': 'spelling', 'on-van': 'van',
     'tim-chu': 'find', 'ghep-tu': 'drag', 'goc-be-ngoan': 'stickers',
   };
   let current = null;

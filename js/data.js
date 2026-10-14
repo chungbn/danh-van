@@ -85,6 +85,53 @@ const RHYME_GROUPS = [
   },
 ];
 
+/* Bảng vần ôn tập: 19 bài theo thứ tự trong “Bảng vần” lớp 1.
+   `ex` là tiếng ví dụ cho từng vần (tiếng đầu tiên dùng trong trò chơi). */
+const VAN_LESSONS = [
+  { n: 1, color: 'red', ex: {
+    ia: ['mía', 'chìa'], ua: ['cua', 'rùa'], ưa: ['dưa', 'mưa'], uê: ['huệ', 'thuê'], oa: ['hoa', 'loa'], oe: ['xoè', 'khoẻ'] } },
+  { n: 2, color: 'pink', ex: {
+    au: ['rau', 'cau'], âu: ['trâu', 'câu'], êu: ['kêu', 'sếu'], iu: ['rìu', 'địu'], ưu: ['cừu', 'bưu'], ao: ['sao', 'táo'], eo: ['mèo', 'kéo'] } },
+  { n: 3, color: 'blue', ex: {
+    an: ['bàn', 'lan'], ăn: ['khăn', 'chăn'], ân: ['cân', 'sân'], on: ['con', 'nón'], ôn: ['chồn', 'thôn'],
+    ơn: ['lợn', 'sơn'], in: ['pin', 'xin'], en: ['đèn', 'sen'], ên: ['nến', 'tên'], un: ['giun', 'bún'] } },
+  { n: 4, color: 'orange', ex: {
+    am: ['cam', 'tám'], ăm: ['tằm', 'chăm'], âm: ['nấm', 'tâm'], om: ['đóm', 'chòm'], ôm: ['tôm', 'cốm'],
+    im: ['chim', 'kìm'], em: ['kem', 'tem'], êm: ['đêm', 'nệm'], um: ['chum', 'cúm'] } },
+  { n: 5, color: 'green', ex: {
+    ac: ['vạc', 'bác'], ăc: ['mắc', 'bắc'], âc: ['gấc', 'bậc'], oc: ['sóc', 'cóc'], ôc: ['ốc', 'cốc'], uc: ['cúc', 'xúc'], ưc: ['mực', 'sức'] } },
+  { n: 6, color: 'purple', ex: {
+    at: ['hát', 'mát'], ăt: ['mắt', 'cắt'], ât: ['đất', 'mật'], ot: ['hót', 'rót'], ôt: ['cột', 'bột'], ơt: ['ớt', 'vợt'],
+    it: ['vịt', 'mít'], et: ['vẹt', 'két'], êt: ['tết', 'dệt'], ut: ['bút', 'mút'], ưt: ['mứt', 'đứt'] } },
+  { n: 7, color: 'teal', ex: {
+    ap: ['tháp', 'sạp'], ăp: ['bắp', 'cặp'], âp: ['tập', 'đập'], op: ['họp', 'góp'], ôp: ['hộp', 'xốp'], ơp: ['lớp', 'chớp'],
+    ip: ['kịp', 'nhịp'], ep: ['dép', 'kẹp'], êp: ['bếp', 'xếp'], up: ['búp', 'chụp'] } },
+  { n: 8, color: 'red', ex: {
+    ai: ['tai', 'nai'], oi: ['voi', 'còi'], ôi: ['chổi', 'đôi'], ơi: ['bơi', 'dơi'], ui: ['núi', 'túi'], ưi: ['ngửi', 'gửi'],
+    ay: ['tay', 'máy'], ây: ['mây', 'cây'], uy: ['huy', 'tuy'] } },
+  { n: 9, color: 'teal', ex: {
+    ang: ['bàng', 'thang'], ăng: ['trăng', 'măng'], âng: ['tầng', 'vâng'], ong: ['ong', 'bóng'], ông: ['trống', 'bông'],
+    eng: ['xẻng', 'kẻng'], ung: ['thùng', 'cung'], ưng: ['trứng', 'gừng'] } },
+  { n: 10, color: 'blue', ex: { anh: ['chanh', 'bánh'], inh: ['kính', 'xinh'], ênh: ['kênh', 'lệnh'] } },
+  { n: 11, color: 'red', ex: { ach: ['sách', 'gạch'], ich: ['lịch', 'xích'], êch: ['ếch', 'lệch'] } },
+  { n: 12, color: 'purple', ex: {
+    iêc: ['tiệc', 'việc'], iêp: ['thiếp', 'tiếp'], iên: ['tiên', 'biển'], iêng: ['chiêng', 'kiềng'], iêm: ['kiếm', 'tiêm'],
+    iêt: ['viết', 'biết'], yêu: ['yêu', 'yếu'], yêng: ['yểng'], yêt: ['yết'], yêm: ['yếm'] } },
+  { n: 13, color: 'purple', ex: {
+    ươc: ['thước', 'bước'], ươp: ['mướp', 'ướp'], ương: ['gương', 'giường'], ươm: ['bướm', 'gươm'], ươn: ['vườn', 'lượn'],
+    ươi: ['lưới', 'mười'], ươu: ['hươu', 'rượu'], ươt: ['lướt', 'trượt'] } },
+  { n: 14, color: 'blue', ex: {
+    uôc: ['đuốc', 'thuốc'], uôn: ['chuồn', 'khuôn'], uông: ['chuông', 'xuồng'], uôm: ['buồm', 'nhuộm'], uôi: ['chuối', 'muối'], uôt: ['chuột', 'tuốt'] } },
+  { n: 15, color: 'pink', ex: { uây: ['khuấy', 'nguẩy'], uân: ['xuân', 'tuần'], uâng: ['khuâng'], uât: ['thuật', 'xuất'] } },
+  { n: 16, color: 'green', ex: {
+    oac: ['khoác', 'toạc'], oan: ['ngoan', 'toán'], oang: ['khoang', 'hoàng'], oam: ['ngoạm'], oai: ['khoai', 'ngoài'], oat: ['hoạt', 'thoát'] } },
+  { n: 17, color: 'orange', ex: {
+    oăc: ['ngoặc', 'ngoắc'], oăn: ['xoăn', 'thoăn'], oăng: ['hoẵng', 'loằng'], oăm: ['hoắm'], oăt: ['loắt', 'choắt'] } },
+  { n: 18, color: 'blue', ex: { oen: ['hoen', 'nhoẻn'], oet: ['khoét', 'toét'] } },
+  { n: 19, color: 'blue', ex: {
+    uyên: ['thuyền', 'chuyện'], uyêt: ['tuyết', 'duyệt'], uya: ['khuya'], uyt: ['huýt', 'xuýt'], uynh: ['huynh', 'khuỳnh'], uych: ['huỵch', 'huých'] } },
+].map(l => ({ ...l, id: 'b' + l.n, items: Object.keys(l.ex) }));
+
 /* Tiếng một âm tiết có hình minh hoạ: dùng cho đánh vần, tìm hình, ghép từ. */
 const WORDS = [
   { w: 'cá', img: 'ca', o: 'c', r: 'a', t: 'sac' },
@@ -156,9 +203,13 @@ const PHRASES = {
   dragWrong: 'Chưa đúng. Chữ này là',
   finished: 'Hoàn thành! Bé đúng',
   outOf: 'trên mười câu.',
+  outOf8: 'trên tám câu.',
   keepTrying: 'Cố lên nhé!',
   gotSticker: 'Hoan hô! Bé nhận được sticker',
   needStars: 'Bé cần',
   needStars2: 'ngôi sao để mở sticker này!',
   test: 'Xin chào bé! Bé có nghe rõ không nào?',
+  findRhyme: 'Bé tìm vần',
+  whichRhyme: 'Tiếng này có vần gì nhỉ?',
+  fillRhyme: 'Bé điền vần cho tiếng',
 };

@@ -152,6 +152,13 @@ const VN = {
     return (onset || '') + r;
   },
 
+  /* Tách một tiếng đã biết vần thành { o, r, t }: split('bánh', 'anh') → { o: 'b', r: 'anh', t: 'sac' }. */
+  split(word, rhyme) {
+    const plain = VN.stripTone(word);
+    const o = plain.endsWith(rhyme) ? plain.slice(0, plain.length - rhyme.length) : null;
+    return { o, r: rhyme, t: VN.toneOf(word) };
+  },
+
   /* Cách đọc một vần đứng riêng: vần p, t, c, ch vốn mang thanh sắc (at → “át”). */
   rhymeSay(rhyme) { return VN.isStop(rhyme) ? VN.applyTone(rhyme, 'sac') : rhyme; },
 

@@ -34,6 +34,7 @@ node tools/gen-audio.js            # thêm --force để sinh lại tất cả; 
 | Bảng chữ cái | 29 chữ cái, cách đọc theo sách lớp 1, hình SVG và từ ví dụ |
 | Dấu thanh | 6 thanh, kèm hình minh hoạ và dãy luyện đọc (ma – má – mà – mả – mã – mạ) |
 | Tập đánh vần | Ghép âm đầu + vần + dấu, đọc theo kiểu “bờ – a – ba – huyền – bà”; tự đặt dấu đúng chỗ và nhắc luật chính tả (c/k, g/gh, ng/ngh, vần p-t-c-ch) |
+| Ôn vần | 19 bài theo “Bảng vần” lớp 1 (ia ua ưa … uynh uych). Mỗi bài: nghe từng vần, đánh vần tiếng ví dụ, 3 trò luyện tập (Nghe – chọn vần, Tìm vần trong tiếng, Điền vần), tuỳ chọn ôn gộp các bài trước; ★ cho mỗi trò đạt từ 6/8 |
 | Tìm chữ | 3 chế độ: nghe tìm chữ, nghe tìm hình, nhìn hình chọn từ, có pháo hoa khi bé chọn đúng |
 | Ghép từ | Kéo thả chữ vào ô trống (chuột và cảm ứng), 3 mức độ |
 | Góc Bé Ngoan | Sao thưởng, 15 sticker thú hoạt hình mở khoá dần |
@@ -53,6 +54,6 @@ js/audio-clips.js  bảng tra văn bản → clip (tự sinh)
 tools/gen-audio.js sinh clip bằng lệnh `say` của macOS
 js/effects.js      pháo hoa, hoa giấy (canvas)
 js/rewards.js      sao, tiến độ, mở khoá sticker
-js/screens/*.js    từng màn hình
+js/screens/*.js    từng màn hình (van.js: Ôn vần, dữ liệu ở VAN_LESSONS trong data.js)
 js/app.js          điều hướng theo hash (#/chu-cai, #/danh-van, ...)
 ```

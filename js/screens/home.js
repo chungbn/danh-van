@@ -14,6 +14,7 @@ Screens.home = {
       { href: '#/chu-cai', color: 'red', art: Art.svg('tao'), title: 'Bảng chữ cái', desc: `Đã học ${Rewards.count('letter')}/${LETTERS.length} chữ` },
       { href: '#/dau-thanh', color: 'orange', art: `<span class="tile-mark">${Art.mark('hoi')}</span>`, title: 'Dấu thanh', desc: `Đã học ${Rewards.count('tone')}/${TONES.length} dấu` },
       { href: '#/danh-van', color: 'green', art: Art.svg('ong'), title: 'Tập đánh vần', desc: 'Ghép âm đầu + vần + dấu' },
+      { href: '#/on-van', color: 'teal', art: Art.svg('ech'), title: 'Ôn vần', desc: `19 bài · đã nghe ${Rewards.count('van')} vần` },
       { href: '#/tim-chu', color: 'blue', art: Art.svg('sao'), title: 'Tìm chữ cái', desc: 'Nghe, nhìn và chọn thật nhanh' },
       { href: '#/ghep-tu', color: 'purple', art: Art.svg('xe'), title: 'Kéo thả ghép từ', desc: 'Kéo chữ vào đúng ô trống' },
       { href: '#/goc-be-ngoan', color: 'pink', art: Art.svg('meo'), title: 'Góc Bé Ngoan', desc: `${Rewards.unlockedCount}/${STICKERS.length} sticker · ${Rewards.stars} ⭐` },

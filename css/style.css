@@ -559,6 +559,61 @@ a { color: inherit; }
 .anim-pulse svg { animation: breathe 1.4s ease-in-out infinite; }
 .badge.jump { animation: jump .6s ease; }
 
+/* ---------- Ôn vần ---------- */
+.screen-van .seg-btn.on { background: var(--teal); border-color: var(--teal-d); }
+.van-list { display: grid; gap: 10px; }
+.van-row {
+  display: grid; grid-template-columns: 52px 1fr auto; align-items: center; gap: 14px;
+  padding: 10px 14px; border-radius: 18px; text-decoration: none; background: var(--cl);
+  border: 3px solid transparent; transition: transform .12s, border-color .12s; animation: rise .4s both;
+}
+.van-row:hover { transform: translateX(4px); border-color: var(--c); }
+.van-num {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--c); color: #fff; font-weight: 800; font-size: 1.25rem; box-shadow: 0 3px 0 var(--cd);
+}
+.van-items { font-size: 1.45rem; font-weight: 800; color: var(--cd); word-spacing: .35em; }
+.van-meta { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1; }
+.van-stars { color: var(--yellow-d); font-size: 1.3rem; letter-spacing: 2px; }
+.van-meta small { color: var(--muted); font-weight: 700; }
+.van-nav { margin-top: 0; }
+.van-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+.van-card {
+  display: flex; flex-direction: column; align-items: center; padding: 12px 6px 8px; cursor: pointer;
+  border-radius: 20px; background: #fff; border: 4px solid var(--c); box-shadow: 0 5px 0 var(--cd);
+  animation: rise .4s both; transition: transform .15s, background .15s;
+}
+.van-card b { font-size: 2.4rem; line-height: 1; color: var(--cd); }
+.van-card small { color: var(--muted); font-weight: 700; font-size: 1rem; }
+.van-card:hover { transform: translateY(-3px); }
+.van-card.seen::after { content: '✓'; color: var(--green-d); font-weight: 800; font-size: .9rem; line-height: 1; }
+.van-card.on, .van-card.speaking { background: var(--c); }
+.van-card.on b, .van-card.on small, .van-card.speaking b, .van-card.speaking small, .van-card.on::after { color: #fff; }
+.van-card.speaking { transform: translateY(-6px) scale(1.06); }
+.van-detail { margin-top: 16px; padding-top: 14px; border-top: 3px dashed var(--line); }
+.van-detail-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px; }
+.van-detail-head p { margin: 0 0 6px; }
+.van-big {
+  min-width: 130px; padding: 10px 22px 4px; border: 0; border-radius: 22px; cursor: pointer;
+  font-size: 3.4rem; font-weight: 800; line-height: 1.1; color: #fff;
+  background: var(--k-rhyme); box-shadow: 0 6px 0 #a5400a;
+}
+.van-ex { font-size: 1.5rem; }
+.van-mix { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-weight: 700; cursor: pointer; }
+.van-mix input { width: 22px; height: 22px; accent-color: var(--teal-d); }
+.van-word {
+  font-size: clamp(3.2rem, 11vw, 5rem); font-weight: 800; line-height: 1.1; color: var(--ink);
+  background: #fff9db; border-radius: 26px; padding: 10px 34px 2px; box-shadow: 0 6px 0 var(--line);
+  display: flex; align-items: baseline; gap: 4px;
+}
+.van-onset { color: var(--k-onset); }
+.van-hl { color: var(--k-rhyme); }
+.van-blank {
+  min-width: 1.6em; text-align: center; color: #ced4da; border-bottom: 6px dashed #ced4da;
+}
+.van-blank.filled { color: var(--k-rhyme); border-bottom-color: transparent; animation: pop .5s ease; }
+.van-word + .row { margin-top: 14px; }
+
 /* ---------- Màn hình nhỏ ---------- */
 @media (max-width: 900px) {
   .spell-pickers { grid-template-columns: 1fr; gap: 0; }
@@ -595,6 +650,12 @@ a { color: inherit; }
   .sticker-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .badge { width: 96px; height: 96px; }
   .stats .stat-row { grid-template-columns: 1fr; }
+  .van-row { grid-template-columns: 40px 1fr; gap: 10px; }
+  .van-num { width: 38px; height: 38px; font-size: 1.05rem; }
+  .van-items { font-size: 1.2rem; }
+  .van-meta { grid-column: 2; flex-direction: row; gap: 10px; align-items: center; }
+  .van-cards { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 10px; }
+  .van-card b { font-size: 1.9rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition: none !important; }
